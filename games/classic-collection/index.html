@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Vault Classic</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <header>
+            <p>PIXEL VAULT // ORIGINAL EDUCATIONAL BUILD</p>
+            <h1 id="game-title">Classic Game</h1>
+            <p id="instructions"></p>
+        </header>
+
+        <section class="game-shell" aria-labelledby="game-title">
+            <canvas id="game" width="720" height="480" tabindex="0" aria-label="Playable game area"></canvas>
+            <div id="dom-game" hidden></div>
+            <p id="status" role="status" aria-live="polite"></p>
+            <button id="restart" type="button">Restart Game</button>
+        </section>
+    </main>
+    <script src="game.js"></script>
+</body>
+</html>

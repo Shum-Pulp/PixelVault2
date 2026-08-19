@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Space Invaders</title>
+  <link rel="stylesheet" href="../classic-game.css"/>
+  <style>
+    :root{
+      /* distinct theme so it doesn't look like the others */
+      --panel:#100a1f; --grid:#1b1232;
+      --text:#f3e8ff; --muted:#b9a6d8;
+      --player:#22d3ee; --invader:#fef3c7; --bullet:#fb7185; --shield:#34d399;
+      --card-bg:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.03));
+      --panel-bg:rgba(255,255,255,.05); --badge-bg:rgba(255,255,255,.06);
+    }
+    body{background:
+      linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35)),
+      url("./spain.jpg") center/cover no-repeat fixed}
+    .controls{grid-template-columns:repeat(3,1fr)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <header>
+        <h1>Space Invaders</h1>
+        <div class="hud">
+          <span class="badge">Score <strong id="score">0</strong></span>
+          <span class="badge">High <strong id="high">0</strong></span>
+          <span class="badge">Lives <strong id="lives">3</strong></span>
+          <span class="badge">Level <strong id="level">1</strong></span>
+        </div>
+      </header>
+      <div class="board">
+        <canvas id="game" width="720" height="540" aria-label="Space Invaders board" role="img"></canvas>
+
+        <aside>
+          <div class="panel">
+            <div class="panel-title">How to Play</div>
+            <div class="legend">
+              <div>Move: <kbd>←</kbd>/<kbd>→</kbd> or <kbd>A</kbd>/<kbd>D</kbd></div>
+              <div>Fire: <kbd>Space</kbd></div>
+              <div>Pause/Restart: <kbd>P</kbd>/<kbd>R</kbd></div>
+              <div>Destroy the invader formation before they reach you.</div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-title">Touch Controls</div>
+            <div class="controls">
+              <button class="btn" data-touch="left">◀</button>
+              <button class="btn" data-touch="fire">●</button>
+              <button class="btn" data-touch="right">▶</button>
+            </div>
+          </div>
+
+          <div class="panel legend">
+            Formation speeds up as invaders fall. Enemy shots come from the lowest invaders in random columns.
+            Three shields absorb shots but break apart pixel by pixel.
+          </div>
+
+          <div class="panel">
+            <button class="btn" id="pauseBtn">⏸ Pause</button>
+            <button class="btn" id="resetBtn">🔄 Restart</button>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <script src="./script.js" defer></script>
+</body>
+</html>

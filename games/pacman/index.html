@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Pac-Man</title>
+  <link rel="stylesheet" href="../classic-game.css"/>
+  <style>
+    :root{
+      --panel:#0d1224; --grid:#131a33;
+      --text:#e6f2ff; --muted:#93a4c7; --accent:#22d3ee;
+      --maze:#1e3a8a; --dot:#f8fafc; --power:#fde047;
+      --pac:#facc15; --ghostFright:#60a5fa; --eyes:#94a3b8;
+      --card-bg:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.04));
+      --panel-bg:rgba(255,255,255,.06); --badge-bg:rgba(34,211,238,.10);
+
+      /* ghost theme colors */
+      --blinky:#ef4444; /* red */
+      --pinky:#f472b6;  /* pink */
+      --inky:#22d3ee;   /* cyan */
+      --clyde:#f59e0b;  /* orange */
+    }
+    body{
+      background:
+        linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+        url("./pac.jpg") center/cover no-repeat fixed;
+    }
+    canvas{
+      touch-action:none;
+    }
+    .controls{grid-template-columns:repeat(3,minmax(52px,1fr));grid-template-rows:repeat(2,minmax(52px,1fr));margin-inline:auto;touch-action:none}
+    .controls .btn{min-height:52px;font-size:22px;font-weight:800;user-select:none;-webkit-user-select:none;touch-action:none}
+    .controls [data-touch="up"]{grid-area:1/2}
+    .controls [data-touch="left"]{grid-area:2/1}
+    .controls [data-touch="down"]{grid-area:2/2}
+    .controls [data-touch="right"]{grid-area:2/3}
+    .controls .btn.is-pressed{color:#081018;background:var(--accent);box-shadow:0 0 15px rgba(34,211,238,.7);transform:translateY(2px) scale(.97)}
+    @media (max-width:560px){
+      .controls{width:min(100%,280px)}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <header>
+        <h1>Pac-Man</h1>
+        <div class="hud">
+          <span class="badge">Score <strong id="score">0</strong></span>
+          <span class="badge">High <strong id="high">0</strong></span>
+          <span class="badge">Lives <strong id="lives">3</strong></span>
+          <span class="badge">Level <strong id="level">1</strong></span>
+        </div>
+      </header>
+      <div class="board">
+        <canvas id="game" width="672" height="504" aria-label="Pac-Man board" role="img"></canvas>
+
+        <aside>
+          <div class="panel">
+            <div class="panel-title">How to Play</div>
+            <div class="legend">
+              <div>Move: <kbd>←</kbd><kbd>→</kbd><kbd>↑</kbd><kbd>↓</kbd> or <kbd>WASD</kbd></div>
+              <div>Pause/Restart: <kbd>P</kbd>/<kbd>R</kbd></div>
+              <div>Eat all dots. Power pellets frighten ghosts.</div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-title">Touch Controls</div>
+            <div class="controls">
+              <button class="btn" type="button" data-touch="up" aria-label="Move up">▲</button>
+              <button class="btn" type="button" data-touch="left" aria-label="Move left">◀</button>
+              <button class="btn" type="button" data-touch="down" aria-label="Move down">▼</button>
+              <button class="btn" type="button" data-touch="right" aria-label="Move right">▶</button>
+            </div>
+          </div>
+
+          <div class="panel legend">
+            Four ghosts with classic behaviors: Blinky (chase), Pinky (ahead), Inky (vector with Blinky), Clyde (run away when close). Frightened = blue & edible.
+          </div>
+
+          <div class="panel">
+            <button class="btn" id="pauseBtn">⏸ Pause</button>
+            <button class="btn" id="resetBtn">🔄 Restart</button>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <script src="./script.js" defer></script>
+</body>
+</html>

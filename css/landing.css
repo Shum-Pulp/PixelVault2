@@ -1,0 +1,1101 @@
+/* Landing-page enhancements kept separate from the original arcade artwork. */
+:root {
+    --arcade-black: rgb(0, 0, 0);
+    --arcade-ink: rgb(15, 16, 21);
+    --arcade-magenta: rgb(215, 41, 122);
+    --arcade-teal: rgb(35, 179, 187);
+    --arcade-yellow: rgb(255, 227, 53);
+    --arcade-metal: rgb(127, 129, 120);
+}
+html {
+    scroll-behavior: smooth;
+}
+
+section[id] {
+    scroll-margin-top: 84px;
+}
+
+.skip-link {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 200;
+    padding: 10px 14px;
+    color: rgb(5, 8, 20);
+    background: rgb(237, 255, 83);
+    font: 12px/1.4 "Press Start 2P", system-ui;
+    text-decoration: none;
+    transform: translateY(-160%);
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
+section.hero {
+    height: max(680px, 100svh);
+    min-height: 100svh;
+}
+
+section.hero img#hero-bg {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    object-position: center 48%;
+}
+
+section.hero::before {
+    background:
+        repeating-linear-gradient(0deg, transparent 0 3px, rgba(2, 8, 20, 0.32) 3px 5px),
+        radial-gradient(ellipse at center, transparent 28%, rgba(0, 0, 10, 0.3) 66%, rgba(0, 0, 8, 0.84) 100%),
+        linear-gradient(180deg, rgba(1, 4, 14, 0.06) 50%, rgba(1, 4, 14, 0.78) 100%),
+        linear-gradient(90deg, rgba(255, 30, 177, 0.14), transparent 25% 75%, rgba(0, 225, 255, 0.14));
+}
+
+.about-section {
+    padding: clamp(54px, 8vw, 92px) max(6vw, 20px);
+    background:
+        repeating-linear-gradient(0deg, rgba(91, 183, 196, 0.025) 0 1px, transparent 1px 5px),
+        linear-gradient(145deg, rgb(4, 11, 27), rgb(8, 21, 39));
+    border-top: 1px solid rgba(91, 183, 196, 0.35);
+    border-bottom: 1px solid rgba(91, 183, 196, 0.35);
+}
+
+section.hero header {
+    top: 55%;
+    width: min(90%, 760px);
+    padding: 20px 28px 22px;
+    background:
+        repeating-linear-gradient(0deg, rgba(0, 225, 255, 0.04) 0 1px, transparent 1px 4px),
+        radial-gradient(circle at 50% 18%, rgba(44, 62, 118, 0.98), rgba(5, 9, 24, 0.98) 66%),
+        rgb(5, 9, 24);
+    box-shadow:
+        inset 0 0 0 3px rgb(5, 7, 13),
+        inset 0 0 34px rgba(0, 225, 255, 0.34),
+        inset 0 -18px 26px rgba(0, 0, 0, 0.62),
+        0 8px 0 rgb(8, 10, 15),
+        0 14px 30px rgba(0, 0, 0, 0.78),
+        0 0 20px rgba(0, 225, 255, 0.94),
+        0 0 48px rgba(255, 35, 190, 0.64);
+}
+
+section.hero p.hero-kicker {
+    margin: 0 auto 7px;
+    padding: 0;
+    color: rgb(255, 101, 207);
+    font: 9px/1.5 "Press Start 2P", system-ui;
+    letter-spacing: 0.14em;
+    text-shadow: 0 0 9px rgba(255, 64, 196, 0.85);
+}
+
+section.hero h1#logo {
+    margin-bottom: 8px;
+}
+
+section.hero h1#logo img {
+    max-width: 300px;
+}
+
+section.hero h1#logo span {
+    display: block;
+    margin: 8px auto 2px;
+    color: rgb(237, 255, 83);
+    font: clamp(18px, 2.5vw, 29px)/1.42 "Press Start 2P", system-ui;
+    letter-spacing: 0;
+    text-wrap: balance;
+    text-shadow:
+        3px 3px rgb(51, 15, 71),
+        0 0 12px rgba(237, 255, 83, 0.55);
+}
+
+section.hero p.hero-lede {
+    max-width: 580px;
+    margin-bottom: 14px;
+    color: rgb(215, 246, 252);
+    font-size: clamp(18px, 2.2vw, 23px);
+    line-height: 1.28;
+    text-wrap: balance;
+}
+
+section.hero a#vault-btn {
+    min-width: min(100%, 300px);
+    padding: 16px 24px;
+    color: rgb(15, 13, 8);
+    background: linear-gradient(180deg, rgb(255, 245, 130), rgb(240, 169, 34));
+    border-color: rgb(255, 250, 205);
+    font-size: clamp(11px, 1.5vw, 14px);
+    text-shadow: 0 1px rgba(255, 255, 255, 0.45);
+    box-shadow:
+        inset 0 0 0 2px rgb(94, 61, 4),
+        inset 0 0 12px rgba(255, 255, 255, 0.42),
+        0 5px 0 rgb(91, 55, 5),
+        0 9px 14px rgba(0, 0, 0, 0.68),
+        0 0 18px rgba(255, 220, 100, 0.88),
+        0 0 36px rgba(255, 64, 196, 0.34);
+}
+
+section.hero a#vault-btn:hover,
+section.hero a#vault-btn:focus-visible {
+    color: rgb(5, 8, 20);
+    background: linear-gradient(180deg, rgb(255, 255, 184), rgb(255, 193, 48));
+    transform: translateY(-3px) scale(1.035);
+    box-shadow:
+        inset 0 0 0 2px rgb(94, 61, 4),
+        0 6px 0 rgb(91, 55, 5),
+        0 11px 18px rgba(0, 0, 0, 0.72),
+        0 0 26px rgba(255, 235, 118, 1),
+        0 0 52px rgba(255, 64, 196, 0.48);
+}
+
+section.hero .hero-benefits {
+    display: flex;
+    justify-content: center;
+    gap: 8px 22px;
+    margin: 15px auto 0;
+    padding: 0;
+    color: rgb(197, 238, 245);
+    font: 15px/1.25 "VT323", monospace;
+    letter-spacing: 0.04em;
+    list-style: none;
+    text-transform: uppercase;
+}
+
+section.hero .hero-benefits li:not(:first-child)::before {
+    content: "◆";
+    margin-right: 22px;
+    color: rgb(255, 64, 196);
+    font-size: 8px;
+    vertical-align: 2px;
+}
+
+section.hero p.hero-cue {
+    margin: 10px auto 0;
+    padding: 0;
+    color: rgb(137, 207, 220);
+    font: 14px/1.3 "VT323", monospace;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+section.hero p.hero-cue span {
+    display: inline-block;
+    margin-right: 4px;
+    color: rgb(0, 225, 255);
+    animation: hero-cue-bounce 0.9s steps(2, end) infinite alternate;
+}
+
+@keyframes hero-cue-bounce {
+    to { transform: translateY(4px); }
+}
+
+.about-copy,
+.vault-highlights {
+    width: min(100%, 1120px);
+    margin-inline: auto;
+}
+
+.about-copy {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.85fr) minmax(300px, 1.15fr);
+    align-items: end;
+    gap: 18px 64px;
+    margin-bottom: 34px;
+}
+
+.section-kicker {
+    grid-column: 1 / -1;
+    margin: 0;
+    color: rgb(255, 64, 196);
+    font: 9px/1.6 "Press Start 2P", system-ui;
+    letter-spacing: 0.08em;
+}
+
+.about-copy h2 {
+    margin: 0;
+    color: rgb(237, 255, 83);
+    font: clamp(22px, 3vw, 38px)/1.4 "Press Start 2P", system-ui;
+    text-wrap: balance;
+    text-shadow: 3px 3px rgb(36, 13, 63), 0 0 12px rgba(237, 255, 83, 0.45);
+}
+
+.about-copy > p:last-child {
+    margin: 0;
+    color: rgb(177, 219, 234);
+    font: clamp(20px, 2vw, 25px)/1.4 "VT323", monospace;
+}
+
+.vault-highlights {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.vault-highlights article {
+    padding: 24px;
+    background: rgba(3, 12, 28, 0.86);
+    border: 1px solid rgb(91, 183, 196);
+    border-radius: 8px;
+    box-shadow: inset 0 0 14px rgba(0, 225, 255, 0.08);
+}
+
+.vault-highlights span {
+    color: rgb(255, 64, 196);
+    font: 30px/1 "Press Start 2P", system-ui;
+}
+
+.vault-highlights h3 {
+    margin: 16px 0 10px;
+    color: rgb(221, 247, 252);
+    font: 11px/1.5 "Press Start 2P", system-ui;
+}
+
+.vault-highlights p {
+    margin: 0;
+    color: rgb(153, 205, 219);
+    font: 20px/1.35 "VT323", monospace;
+}
+
+.offer-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 18px;
+    padding-top: 14px;
+    color: rgb(0, 225, 255);
+    border-top: 1px solid rgba(91, 183, 196, 0.24);
+    font: 18px/1.2 "VT323", monospace;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+}
+
+.offer-link span {
+    color: rgb(237, 255, 83);
+    font-size: 22px;
+    transition: transform 0.15s ease;
+}
+
+.offer-link:hover,
+.offer-link:focus-visible {
+    color: rgb(237, 255, 83);
+    outline: none;
+    text-shadow: 0 0 8px rgba(0, 225, 255, 0.68);
+}
+
+.offer-link:hover span,
+.offer-link:focus-visible span {
+    transform: translateX(4px);
+}
+
+#show-game-list {
+    margin: 3px 0 1px;
+    padding: 3px 7px;
+    color: rgb(0, 225, 255);
+    background: rgba(4, 20, 32, 0.9);
+    border: 1px solid rgba(0, 225, 255, 0.72);
+    border-radius: 3px;
+    font: 0.72em/1.2 "VT323", monospace;
+    cursor: pointer;
+}
+
+#show-game-list:hover,
+#show-game-list:focus-visible {
+    color: rgb(237, 255, 83);
+    border-color: rgb(237, 255, 83);
+    outline: none;
+    box-shadow: 0 0 8px rgba(237, 255, 83, 0.55);
+}
+
+#game-list-dialog {
+    width: min(92vw, 640px);
+    max-height: min(82svh, 600px);
+    padding: 0;
+    overflow: hidden;
+    color: rgb(205, 244, 250);
+    background:
+        repeating-linear-gradient(0deg, rgba(0, 225, 255, 0.035) 0 1px, transparent 1px 4px),
+        rgb(4, 13, 27);
+    border: 2px solid rgb(0, 225, 255);
+    border-radius: 8px;
+    font-family: "VT323", monospace;
+    box-shadow: 0 0 24px rgba(0, 225, 255, 0.75), 0 0 42px rgba(255, 64, 196, 0.48);
+}
+
+#game-list-dialog::backdrop {
+    background: rgba(1, 3, 14, 0.82);
+    backdrop-filter: blur(3px);
+}
+
+.game-list-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 14px;
+    background: rgba(30, 7, 44, 0.96);
+    border-bottom: 1px solid rgb(255, 64, 196);
+}
+
+.game-list-heading h3 {
+    margin: 0;
+    color: rgb(237, 255, 83);
+    font: clamp(11px, 2vw, 15px)/1.4 "Press Start 2P", system-ui;
+}
+
+#close-game-list {
+    flex: 0 0 auto;
+    width: 34px;
+    height: 34px;
+    padding: 0 0 3px;
+    color: white;
+    background: rgb(116, 10, 42);
+    border: 1px solid rgb(255, 101, 160);
+    border-radius: 50%;
+    font: 26px/1 "VT323", monospace;
+    cursor: pointer;
+}
+
+#game-list-dialog > p {
+    margin: 12px 16px 5px;
+    font-size: 19px;
+}
+
+#game-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 7px 18px;
+    max-height: min(58svh, 410px);
+    margin: 0;
+    padding: 10px 18px 18px 42px;
+    overflow-y: auto;
+    color: rgb(185, 231, 240);
+    font-size: 18px;
+    line-height: 1.15;
+}
+
+#game-list li::marker {
+    color: rgb(255, 64, 196);
+}
+
+.cabinet-game-actions {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+#game-load-status {
+    color: rgb(169, 255, 214);
+    font: 14px/1 "VT323", monospace;
+    white-space: nowrap;
+}
+
+.cabinet-game-actions button {
+    min-width: auto;
+    height: 32px;
+    padding: 4px 8px;
+    color: rgb(5, 12, 28);
+    background: rgb(0, 225, 255);
+    border: 1px solid rgb(255, 64, 196);
+    border-radius: 3px;
+    font: 16px/1 "VT323", monospace;
+    cursor: pointer;
+}
+
+.cabinet-game-actions button:hover,
+.cabinet-game-actions button:focus-visible {
+    color: rgb(237, 255, 83);
+    background: rgb(32, 8, 46);
+    outline: 1px solid white;
+}
+
+.game-loading {
+    display: grid;
+    position: absolute;
+    inset: 48px 0 0;
+    z-index: 4;
+    place-content: center;
+    justify-items: center;
+    gap: 14px;
+    color: rgb(237, 255, 83);
+    background: rgb(1, 4, 14);
+    font: 20px/1.4 "VT323", monospace;
+    text-align: center;
+}
+
+.game-loading[hidden] {
+    display: none;
+}
+
+.game-loading p {
+    margin: 0;
+}
+
+.game-loading a {
+    color: rgb(0, 225, 255);
+    font-size: 17px;
+}
+
+#cabinet-game:fullscreen {
+    width: 100vw;
+    height: 100vh;
+    background: rgb(1, 4, 14);
+    border: 0;
+    border-radius: 0;
+}
+
+#cabinet-game:fullscreen .cabinet-game-bar {
+    height: 48px;
+}
+
+#cabinet-game:fullscreen #cabinet-game-frame {
+    top: 48px;
+    height: calc(100% - 48px);
+}
+
+.loading-pixels {
+    width: 16px;
+    height: 16px;
+    background: rgb(255, 64, 196);
+    box-shadow: 24px 0 rgb(0, 225, 255), 48px 0 rgb(237, 255, 83);
+    animation: loading-pixels 0.8s steps(2, end) infinite alternate;
+}
+
+@keyframes loading-pixels {
+    to { opacity: 0.3; transform: translateY(-5px); }
+}
+
+@media (max-width: 767.98px) {
+    section.hero {
+        height: max(620px, 100svh);
+    }
+
+    section.hero header {
+        top: 54%;
+        width: 94%;
+        padding: 14px 14px 16px;
+    }
+
+    section.hero p.hero-kicker {
+        margin-bottom: 5px;
+        font-size: 7px;
+    }
+
+    section.hero p.hero-lede {
+        margin-bottom: 11px;
+        padding-inline: 2px;
+        font-size: clamp(15px, 4vw, 18px);
+    }
+
+    section.hero h1#logo img {
+        max-width: 240px;
+    }
+
+    section.hero h1#logo span {
+        margin-top: 6px;
+        font-size: clamp(15px, 4.4vw, 20px);
+    }
+
+    section.hero a#vault-btn {
+        min-width: min(92%, 280px);
+        padding: 12px 14px;
+        font-size: 10px;
+    }
+
+    section.hero p.hero-cue {
+        margin-top: 8px;
+        font-size: 12px;
+    }
+
+    section.hero .hero-benefits {
+        flex-wrap: wrap;
+        gap: 3px 12px;
+        max-width: 340px;
+        margin-top: 12px;
+        font-size: 13px;
+    }
+
+    section.hero .hero-benefits li:not(:first-child)::before {
+        margin-right: 12px;
+    }
+
+    .about-copy {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        text-align: center;
+    }
+
+    .vault-highlights {
+        grid-template-columns: 1fr;
+    }
+
+    .vault-highlights article {
+        padding: 18px;
+        text-align: center;
+    }
+
+    #game-load-status,
+    #sound-toggle {
+        display: none;
+    }
+
+    .cabinet-game-actions {
+        gap: 4px;
+    }
+
+    .cabinet-game-actions button {
+        height: 28px;
+        padding-inline: 6px;
+        font-size: 14px;
+    }
+
+    .game-loading {
+        inset-block-start: 42px;
+    }
+
+    #game-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 7px 14px;
+        font-size: 17px;
+    }
+}
+
+/* Match the hidden arcade and trivia cabinet to the physical arcade room. */
+div.arcade-overlay {
+    background-color: rgba(3, 3, 7, 0.96);
+    background-image:
+        radial-gradient(circle, rgba(220, 43, 124, 0.34) 0 2px, transparent 2.5px),
+        radial-gradient(circle, rgba(27, 177, 187, 0.3) 0 2px, transparent 2.5px);
+    background-position: 0 0, 18px 18px;
+    background-size: 36px 36px;
+    backdrop-filter: none;
+}
+
+div.vault-overlay-panel {
+    background:
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.022) 0 1px, transparent 1px 6px),
+        var(--arcade-ink);
+    border: 9px ridge var(--arcade-metal);
+    border-radius: 1px;
+    box-shadow:
+        inset 0 0 0 5px rgb(27, 91, 104),
+        12px 14px 0 rgba(0, 0, 0, 0.88);
+    scrollbar-color: rgb(221, 185, 42) var(--arcade-ink);
+}
+
+div.vault-overlay-heading {
+    max-width: 760px;
+    padding: 14px 48px 16px;
+    background: rgb(100, 18, 68);
+    border: 5px double rgb(244, 214, 51);
+    box-shadow: 6px 7px 0 rgb(0, 0, 0);
+    transform: rotate(-0.25deg);
+}
+
+div.vault-overlay-heading > p:first-child {
+    display: table;
+    margin: -28px auto 9px;
+    padding: 5px 9px;
+    color: rgb(10, 9, 12);
+    background: rgb(32, 184, 190);
+    border: 2px solid rgb(5, 5, 8);
+    text-shadow: none;
+    box-shadow: 3px 3px 0 rgb(0, 0, 0);
+}
+
+div.vault-overlay-heading h2,
+div#featured h2,
+div#quiz h2 {
+    color: var(--arcade-yellow);
+    -webkit-text-stroke: 1px rgb(16, 8, 23);
+    text-shadow:
+        3px 3px 0 var(--arcade-magenta),
+        5px 5px 0 rgb(21, 147, 166),
+        7px 7px 0 rgb(0, 0, 0);
+}
+
+button#close-arcade {
+    color: rgb(12, 10, 11);
+    background: rgb(211, 42, 67);
+    border: 4px outset rgb(255, 125, 118);
+    border-radius: 0;
+    box-shadow: 4px 4px 0 rgb(0, 0, 0);
+}
+
+div#featured h2 {
+    width: fit-content;
+    background: rgb(18, 20, 25);
+    border: 5px double var(--arcade-teal);
+    border-radius: 0;
+    box-shadow: 5px 6px 0 rgb(0, 0, 0);
+}
+
+div.vault-overlay-panel article.card {
+    background: rgb(20, 21, 25);
+    border: 6px ridge rgb(110, 113, 108);
+    border-radius: 0;
+    box-shadow: 6px 7px 0 rgb(0, 0, 0);
+}
+
+div.vault-overlay-panel article.card:nth-child(3n + 1) {
+    border-color: rgb(31, 157, 170);
+}
+
+div.vault-overlay-panel article.card:nth-child(3n + 2) {
+    border-color: rgb(181, 38, 109);
+}
+
+div.vault-overlay-panel article.card:nth-child(3n) {
+    border-color: rgb(186, 156, 37);
+}
+
+div.vault-overlay-panel article.card:hover {
+    border-style: outset;
+    border-color: rgb(241, 213, 56);
+    transform: translate(-2px, -2px);
+    box-shadow: 9px 10px 0 rgb(0, 0, 0);
+}
+
+div.vault-overlay-panel div.card-img {
+    position: relative;
+    border-bottom: 7px solid rgb(6, 6, 8);
+    background: rgb(0, 0, 0);
+}
+
+div.vault-overlay-panel div.card-img::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.25) 0 1px, transparent 1px 4px);
+}
+
+div.vault-overlay-panel article.card h3 span {
+    border-radius: 0;
+    box-shadow: 3px 3px 0 rgb(0, 0, 0);
+}
+
+div.vault-overlay-panel span.play-icon {
+    z-index: 3;
+    color: rgb(8, 8, 10);
+    background: rgb(238, 190, 38);
+    border: 4px outset rgb(255, 230, 112);
+    border-radius: 0;
+    box-shadow: 3px 3px 0 rgb(0, 0, 0);
+}
+
+div.vault-overlay-panel div.arcade-cabinet {
+    background: rgb(25, 25, 27);
+    border: 10px ridge rgb(115, 116, 108);
+    border-radius: 2px;
+    box-shadow:
+        inset 0 0 0 5px rgb(85, 18, 60),
+        10px 12px 0 rgb(0, 0, 0);
+    animation: none;
+}
+
+div.vault-overlay-panel div.arcade-cabinet::before {
+    border-radius: 0;
+    box-shadow: inset 0 0 18px rgb(0, 0, 0);
+    animation: none;
+}
+
+div#quiz {
+    background: rgb(3, 14, 12);
+    border: 4px solid rgb(57, 114, 90);
+    border-radius: 12% / 4%;
+    box-shadow: inset 0 0 26px rgb(0, 0, 0);
+    animation: none !important;
+}
+
+div#quiz::before {
+    opacity: 0.34;
+}
+
+div.quiz-box {
+    background: rgb(3, 9, 8);
+    border: 3px double rgb(69, 185, 145);
+    border-radius: 0;
+    box-shadow: inset 0 0 14px rgb(0, 0, 0), 4px 4px 0 rgb(0, 0, 0);
+}
+
+#show-game-list,
+input#guess,
+button#guess-btn,
+button#retry-btn,
+.cabinet-game-actions button,
+button#close-cabinet-game {
+    border: 3px outset rgb(162, 166, 145);
+    border-radius: 0;
+    box-shadow: 3px 3px 0 rgb(0, 0, 0);
+}
+
+#show-game-list {
+    color: rgb(17, 13, 8);
+    background: rgb(220, 177, 38);
+}
+
+input#guess {
+    color: rgb(159, 244, 171);
+    background: rgb(1, 7, 6);
+    border-style: inset;
+    text-align: left;
+}
+
+button#guess-btn,
+button#retry-btn {
+    color: rgb(7, 12, 10);
+    background: rgb(45, 182, 135);
+}
+
+#show-game-list:active,
+button#guess-btn:active,
+button#retry-btn:active,
+.cabinet-game-actions button:active {
+    border-style: inset;
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 rgb(0, 0, 0);
+}
+
+#game-list-dialog {
+    color: rgb(210, 220, 198);
+    background: rgb(20, 21, 23);
+    border: 8px ridge rgb(127, 129, 119);
+    border-radius: 0;
+    box-shadow: 10px 12px 0 rgba(0, 0, 0, 0.9);
+}
+
+#game-list-dialog::backdrop {
+    background: rgba(3, 3, 5, 0.88);
+    backdrop-filter: none;
+}
+
+#game-list-dialog li {
+    padding: 5px 7px;
+    background: rgb(8, 10, 13);
+    border-bottom: 2px dotted rgb(44, 153, 164);
+}
+
+#close-game-list {
+    color: rgb(11, 9, 10);
+    background: rgb(207, 44, 67);
+    border: 3px outset rgb(255, 120, 113);
+    border-radius: 0;
+}
+
+div.cabinet-game-bar {
+    background: rgb(47, 45, 42);
+    border-bottom: 6px ridge rgb(134, 133, 119);
+}
+
+.cabinet-game-actions button {
+    color: rgb(13, 12, 9);
+    background: rgb(216, 178, 42);
+}
+
+.game-loading {
+    background:
+        repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.28) 0 1px, transparent 1px 4px),
+        rgb(4, 13, 12);
+    border: 4px double rgb(44, 172, 142);
+    border-radius: 0;
+}
+
+@media (max-width: 575.98px) {
+    div.vault-overlay-panel {
+        border-width: 5px;
+        padding: 18px 12px;
+    }
+
+    div.vault-overlay-heading {
+        padding: 13px 34px;
+        transform: none;
+    }
+
+    div.vault-overlay-panel article.card {
+        border-width: 4px;
+    }
+
+    div.vault-overlay-panel div.card-img {
+        border-right: 6px solid rgb(6, 6, 8);
+        border-bottom: 0;
+    }
+}
+
+@media (max-height: 620px) and (orientation: landscape) {
+    section.hero {
+        height: max(520px, 100svh);
+    }
+
+    section.hero header {
+        top: 52%;
+        width: min(82%, 690px);
+        padding-block: 10px 12px;
+    }
+
+    section.hero h1#logo {
+        width: min(76%, 430px);
+        padding-block: 3px;
+    }
+
+    section.hero h1#logo img {
+        max-width: 210px;
+    }
+
+    section.hero h1#logo span {
+        margin-top: 3px;
+        font-size: 14px;
+        line-height: 1.35;
+    }
+
+    section.hero p.hero-lede {
+        margin-bottom: 8px;
+        font-size: 16px;
+    }
+
+    section.hero p.hero-cue {
+        margin-top: 6px;
+    }
+
+    section.hero .hero-benefits {
+        margin-top: 8px;
+    }
+}
+
+@media (max-width: 430px) {
+    #fullscreen-game {
+        max-width: 70px;
+    }
+
+    #game-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .loading-pixels,
+    section.hero p.hero-cue span { animation: none; }
+}
+
+/* Physical arcade-room pass: carpet, cabinet panels, marquees and worn print. */
+section.hero header {
+    background:
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.025) 0 1px, transparent 1px 5px),
+        rgb(12, 13, 25);
+    border: 6px double rgb(214, 208, 177);
+    border-radius: 0;
+    box-shadow:
+        inset 0 0 0 5px rgb(35, 28, 58),
+        inset 0 -10px 0 rgba(0, 0, 0, 0.45),
+        9px 9px 0 rgb(0, 0, 0),
+        -5px -5px 0 rgb(179, 34, 116);
+    transform: translate(-50%, -50%) rotate(-0.35deg);
+}
+
+section.hero p.hero-kicker,
+.section-kicker,
+div.offers-heading > p:first-child,
+p.unlock-kicker {
+    display: table;
+    padding: 5px 8px;
+    color: rgb(18, 15, 19);
+    background: rgb(246, 214, 54);
+    border: 2px solid rgb(18, 15, 19);
+    box-shadow: 3px 3px 0 rgb(220, 46, 118);
+    text-shadow: none;
+    transform: rotate(-1deg);
+}
+
+section.hero p.hero-kicker,
+div.offers-heading > p:first-child {
+    margin-inline: auto;
+}
+
+section.hero h1#logo span,
+.about-copy h2,
+#unlock-title {
+    color: rgb(255, 235, 79);
+    -webkit-text-stroke: 1px rgb(24, 12, 37);
+    text-shadow:
+        3px 3px 0 rgb(214, 38, 132),
+        6px 6px 0 rgb(29, 170, 195),
+        8px 8px 0 rgb(0, 0, 0);
+}
+
+section.hero a#vault-btn {
+    color: rgb(20, 15, 7);
+    background: rgb(239, 180, 38);
+    border: 4px outset rgb(255, 226, 115);
+    border-radius: 0;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.38);
+    box-shadow: 5px 6px 0 rgb(45, 25, 4);
+}
+
+section.hero a#vault-btn:hover,
+section.hero a#vault-btn:focus-visible {
+    background: rgb(255, 207, 51);
+    border-style: inset;
+    transform: translate(2px, 3px);
+    box-shadow: 2px 2px 0 rgb(45, 25, 4);
+}
+
+.about-section {
+    background-color: rgb(24, 10, 43);
+    background-image:
+        radial-gradient(circle, rgb(230, 50, 129) 0 2px, transparent 2.5px),
+        radial-gradient(circle, rgb(22, 187, 194) 0 2px, transparent 2.5px),
+        linear-gradient(115deg, transparent 46%, rgba(255, 218, 54, 0.2) 47% 49%, transparent 50%);
+    background-position: 0 0, 18px 18px, 0 0;
+    background-size: 36px 36px, 36px 36px, 72px 72px;
+    border-block: 8px solid rgb(5, 5, 8);
+    box-shadow: inset 0 7px 0 rgb(34, 187, 190), inset 0 -7px 0 rgb(205, 42, 126);
+}
+
+.about-copy {
+    padding: clamp(20px, 4vw, 38px);
+    background: rgba(7, 8, 15, 0.94);
+    border: 5px double rgb(181, 182, 161);
+    box-shadow: 9px 9px 0 rgba(0, 0, 0, 0.72);
+}
+
+.vault-highlights article {
+    position: relative;
+    background: rgb(16, 18, 27);
+    border: 4px solid rgb(43, 153, 171);
+    border-radius: 0;
+    box-shadow: 6px 7px 0 rgb(0, 0, 0);
+}
+
+.vault-highlights article:nth-child(2) {
+    border-color: rgb(207, 48, 127);
+    transform: rotate(0.5deg);
+}
+
+.vault-highlights article:nth-child(3) {
+    border-color: rgb(219, 187, 42);
+    transform: rotate(-0.45deg);
+}
+
+section.game-section {
+    background-color: rgb(9, 11, 17);
+    background-image:
+        linear-gradient(45deg, rgba(24, 120, 139, 0.18) 25%, transparent 25% 75%, rgba(24, 120, 139, 0.18) 75%),
+        linear-gradient(45deg, rgba(192, 36, 112, 0.14) 25%, transparent 25% 75%, rgba(192, 36, 112, 0.14) 75%);
+    background-position: 0 0, 18px 18px;
+    background-size: 36px 36px;
+    box-shadow: inset 0 10px 0 rgb(0, 0, 0), inset 0 -10px 0 rgb(0, 0, 0);
+}
+
+section#offers div.offers-heading h2 {
+    width: fit-content;
+    padding: 10px 24px;
+    color: rgb(255, 226, 61);
+    background: rgb(114, 21, 75);
+    border: 5px double rgb(255, 226, 61);
+    border-radius: 0;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 0 rgb(12, 8, 20);
+    box-shadow: 6px 6px 0 rgb(13, 13, 18);
+    transform: rotate(0.4deg);
+}
+
+article.offer {
+    background: rgb(18, 20, 27);
+    border: 5px ridge rgb(80, 91, 96);
+    border-radius: 0;
+    box-shadow: 7px 8px 0 rgb(0, 0, 0);
+}
+
+article.offer:nth-child(odd) {
+    transform: rotate(-0.3deg);
+}
+
+article.offer:nth-child(even) {
+    transform: rotate(0.3deg);
+}
+
+article.offer:hover {
+    border-color: rgb(221, 180, 36);
+    transform: translate(-2px, -2px) rotate(0);
+    box-shadow: 10px 10px 0 rgb(0, 0, 0);
+}
+
+div.offer-media {
+    border-bottom: 7px solid rgb(5, 5, 7);
+}
+
+div.offer-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0 1px, transparent 1px 4px),
+        linear-gradient(105deg, rgba(255, 236, 180, 0.11), transparent 38%);
+}
+
+div.offer-media img,
+div.offer-media.offer-media-contain img {
+    background: rgb(190, 188, 166);
+    filter: sepia(0.13) saturate(0.74) contrast(1.18) brightness(0.82);
+}
+
+p.offer-number {
+    width: fit-content;
+    padding: 5px 7px;
+    color: rgb(20, 18, 10);
+    background: rgb(225, 191, 49);
+    border: 2px solid rgb(5, 5, 8);
+    box-shadow: 3px 3px 0 rgb(192, 38, 114);
+}
+
+article.offer h3 {
+    color: rgb(229, 225, 199);
+    text-shadow: 3px 3px 0 rgb(119, 27, 80);
+}
+
+.offer-link {
+    border-radius: 0;
+    text-decoration-style: double;
+}
+
+section.unlock-section {
+    background-color: rgb(45, 12, 33);
+    background-image:
+        repeating-linear-gradient(135deg, rgba(255, 208, 44, 0.14) 0 8px, transparent 8px 18px),
+        radial-gradient(circle at 80% 50%, rgb(21, 101, 123), transparent 31%);
+    border-block: 8px solid rgb(4, 4, 7);
+    box-shadow: inset 0 7px 0 rgb(214, 44, 123), inset 0 -7px 0 rgb(30, 174, 186);
+}
+
+div.coin-box {
+    background: rgb(37, 39, 39);
+    border: 8px ridge rgb(142, 142, 129);
+    border-radius: 2px;
+    box-shadow: 9px 10px 0 rgb(0, 0, 0);
+}
+
+footer {
+    background:
+        repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.025) 0 1px, transparent 1px 7px),
+        rgb(8, 9, 12);
+    border-top: 10px double rgb(201, 42, 119);
+    box-shadow: inset 0 6px 0 rgb(27, 175, 185);
+}
+
+@media (max-width: 767.98px) {
+    section.hero header {
+        transform: translate(-50%, -50%);
+        border-width: 4px;
+    }
+
+    .about-copy {
+        padding: 20px 16px;
+    }
+
+    article.offer:nth-child(n),
+    .vault-highlights article:nth-child(n) {
+        transform: none;
+    }
+}

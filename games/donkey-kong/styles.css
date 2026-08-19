@@ -1,0 +1,275 @@
+:root {
+    color-scheme: dark;
+    --yellow: #ffe94a;
+    --pink: #ff45ad;
+    --blue: #39e7ff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+body {
+    display: grid;
+    place-items: start center;
+    padding: clamp(10px, 3vw, 28px);
+    color: #f4f7ff;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(255, 40, 160, 0.18), transparent 32%),
+        radial-gradient(circle at 85% 70%, rgba(0, 210, 255, 0.15), transparent 34%),
+        #050514;
+    font-family: "Courier New", monospace;
+}
+
+.game-wrap {
+    width: min(860px, 100%);
+    max-height: 100%;
+}
+
+.game-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 12px;
+}
+
+.game-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.scoreboard {
+    display: flex;
+    gap: 7px;
+}
+
+.scoreboard span {
+    padding: 7px 9px;
+    color: var(--blue);
+    background: rgba(8, 10, 35, 0.92);
+    border: 1px solid rgba(57, 231, 255, 0.58);
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.scoreboard strong {
+    color: var(--yellow);
+}
+
+.game-heading p {
+    margin: 0 0 3px;
+    color: var(--blue);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+}
+
+h1,
+h2,
+p {
+    margin-top: 0;
+}
+
+h1 {
+    margin-bottom: 0;
+    color: var(--yellow);
+    font-size: clamp(25px, 6vw, 46px);
+    line-height: 1;
+    text-transform: uppercase;
+    text-shadow: 3px 3px #ba1b49, 0 0 13px rgba(255, 233, 74, 0.62);
+}
+
+button {
+    min-height: 44px;
+    padding: 9px 13px;
+    color: #09071c;
+    background: linear-gradient(#fff177, #f29923);
+    border: 2px solid white;
+    border-radius: 5px;
+    font: 800 13px/1 "Courier New", monospace;
+    cursor: pointer;
+    box-shadow: 0 0 12px rgba(255, 233, 74, 0.5);
+    touch-action: none;
+}
+
+button:active {
+    transform: translateY(2px);
+}
+
+button:focus-visible {
+    outline: 3px solid var(--blue);
+    outline-offset: 3px;
+}
+
+canvas {
+    display: block;
+    width: min(100%, 760px);
+    height: auto;
+    max-height: calc(100svh - 190px);
+    aspect-ratio: 8 / 7;
+    margin-inline: auto;
+    background: #02020a;
+    border: clamp(3px, 0.7vw, 7px) solid var(--pink);
+    border-radius: 8px;
+    image-rendering: pixelated;
+    box-shadow:
+        0 0 12px rgba(255, 69, 173, 0.9),
+        0 0 30px rgba(57, 231, 255, 0.44),
+        inset 0 0 24px #000;
+}
+
+.status {
+    min-height: 1.2em;
+    margin: 10px 0 0;
+    color: var(--yellow);
+    font-weight: 800;
+    text-align: center;
+}
+
+.instructions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 16px;
+    margin-top: 12px;
+    padding: 13px;
+    background: rgba(8, 10, 35, 0.88);
+    border: 1px solid rgba(57, 231, 255, 0.52);
+    border-radius: 7px;
+}
+
+.instructions h2 {
+    margin-bottom: 5px;
+    color: var(--blue);
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+.instructions p {
+    margin-bottom: 0;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+kbd {
+    display: inline-block;
+    min-width: 24px;
+    margin-right: 3px;
+    padding: 2px 5px;
+    background: #251451;
+    border: 1px solid #8066d8;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.touch-controls {
+    display: none;
+    grid-template-columns: repeat(5, minmax(44px, 1fr));
+    gap: 6px;
+}
+
+.touch-controls button {
+    padding-inline: 8px;
+    font-size: 18px;
+}
+
+.touch-controls button:last-child {
+    color: white;
+    background: linear-gradient(#ff4d99, #a51052);
+    font-size: 11px;
+}
+
+@media (hover: none), (pointer: coarse) {
+    .instructions {
+        grid-template-columns: 1fr;
+    }
+
+    .touch-controls {
+        display: grid;
+    }
+
+    canvas {
+        max-height: calc(100svh - 270px);
+    }
+}
+
+@media (max-width: 560px) {
+    body {
+        padding: 7px;
+    }
+
+    .game-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .game-actions {
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .scoreboard span {
+        padding: 6px;
+        font-size: 9px;
+    }
+
+    #new-game {
+        min-height: 38px;
+        padding: 7px 8px;
+        font-size: 10px;
+    }
+
+    .instructions {
+        padding: 9px;
+    }
+
+    .touch-controls {
+        grid-template-columns: repeat(5, minmax(44px, 1fr));
+    }
+
+    .touch-controls button {
+        min-height: 46px;
+    }
+}
+
+@media (max-height: 620px) {
+    body {
+        padding: 5px;
+    }
+
+    .game-heading,
+    .instructions {
+        margin-bottom: 6px;
+    }
+
+    .instructions {
+        margin-top: 6px;
+        padding: 7px;
+    }
+
+    canvas {
+        max-height: calc(100svh - 190px);
+    }
+
+    .instructions h2 {
+        margin-bottom: 2px;
+        font-size: 12px;
+    }
+
+    .instructions p {
+        font-size: 10px;
+        line-height: 1.3;
+    }
+}

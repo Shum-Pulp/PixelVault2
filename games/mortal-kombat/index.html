@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mortal Kombat — Local Multiplayer</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="src/mk.js" defer></script>
+    <script src="game-launcher.js" defer></script>
+</head>
+<body>
+    <main class="mk-page">
+        <div class="mk-heading">
+            <div>
+                <p class="eyebrow">LOCAL MULTIPLAYER</p>
+                <h1>Mortal Kombat</h1>
+            </div>
+            <div class="match-actions">
+                <div class="match-score" aria-label="Match score keeper">
+                    <span>Sub-Zero <strong id="player1Score">0</strong></span>
+                    <span>Best <strong id="matchHighScore">0</strong></span>
+                    <span>Kano <strong id="player2Score">0</strong></span>
+                </div>
+                <button id="restart" type="button">Restart Match</button>
+            </div>
+        </div>
+
+        <section class="arena-shell" aria-label="Mortal Kombat fighting arena">
+            <div id="parent">
+                <div id="utils">
+                    <div id="player1Name" class="playerName">Sub-Zero</div>
+                    <div id="player1LifeBar" class="lifebar"><div class="life" id="player1Life"></div></div>
+                    <div id="player2Name" class="playerName">Kano</div>
+                    <div id="player2LifeBar" class="lifebar"><div class="life" id="player2Life"></div></div>
+                </div>
+                <div id="arena"></div>
+                <div id="loading"><span class="loadingLabel">Loading fighters...</span></div>
+            </div>
+        </section>
+
+        <section class="control-guide" aria-label="Game controls">
+            <div>
+                <h2>Player 1</h2>
+                <p><kbd>G</kbd><kbd>J</kbd> move &middot; <kbd>Y</kbd> jump &middot; <kbd>H</kbd> duck</p>
+                <p><kbd>A</kbd><kbd>S</kbd> punch &middot; <kbd>D</kbd><kbd>F</kbd> kick &middot; <kbd>Shift</kbd> block</p>
+            </div>
+            <div>
+                <h2>Player 2</h2>
+                <p><kbd>&larr;</kbd><kbd>&rarr;</kbd> move &middot; <kbd>&uarr;</kbd> jump &middot; <kbd>&darr;</kbd> duck</p>
+                <p><kbd>P</kbd><kbd>[</kbd> punch &middot; <kbd>]</kbd><kbd>\</kbd> kick &middot; <kbd>Ctrl</kbd> block</p>
+            </div>
+        </section>
+
+        <section class="touch-panel" aria-label="Two player touch controls">
+            <h2>Touch Fight Controls</h2>
+            <p class="touch-hint">Use more than one finger for jump attacks, uppercuts, spin kicks, and blocking.</p>
+
+            <div class="fighter-touch-grid">
+                <div class="fighter-controls player-one-controls">
+                    <h3>Player 1</h3>
+                    <div class="control-deck">
+                        <div class="touch-dpad" aria-label="Player one movement controls">
+                            <button class="move-up" type="button" data-key="89" aria-label="Player one jump">&uarr;</button>
+                            <button class="move-left" type="button" data-key="71" aria-label="Player one move left">&larr;</button>
+                            <button class="move-down" type="button" data-key="72" aria-label="Player one duck">&darr;</button>
+                            <button class="move-right" type="button" data-key="74" aria-label="Player one move right">&rarr;</button>
+                        </div>
+                        <div class="touch-actions" aria-label="Player one attack controls">
+                            <button type="button" data-key="65" aria-label="Player one high punch">HP</button>
+                            <button type="button" data-key="83" aria-label="Player one low punch">LP</button>
+                            <button type="button" data-key="70" aria-label="Player one high kick">HK</button>
+                            <button type="button" data-key="68" aria-label="Player one low kick">LK</button>
+                            <button class="block-action" type="button" data-key="16" aria-label="Player one block">BLOCK</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fighter-controls player-two-controls">
+                    <h3>Player 2</h3>
+                    <div class="control-deck">
+                        <div class="touch-dpad" aria-label="Player two movement controls">
+                            <button class="move-up" type="button" data-key="38" aria-label="Player two jump">&uarr;</button>
+                            <button class="move-left" type="button" data-key="37" aria-label="Player two move left">&larr;</button>
+                            <button class="move-down" type="button" data-key="40" aria-label="Player two duck">&darr;</button>
+                            <button class="move-right" type="button" data-key="39" aria-label="Player two move right">&rarr;</button>
+                        </div>
+                        <div class="touch-actions" aria-label="Player two attack controls">
+                            <button type="button" data-key="80" aria-label="Player two high punch">HP</button>
+                            <button type="button" data-key="219" aria-label="Player two low punch">LP</button>
+                            <button type="button" data-key="220" aria-label="Player two high kick">HK</button>
+                            <button type="button" data-key="221" aria-label="Player two low kick">LK</button>
+                            <button class="block-action" type="button" data-key="17" aria-label="Player two block">BLOCK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
